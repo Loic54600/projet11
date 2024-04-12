@@ -1,14 +1,18 @@
 import React from 'react';
 
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import Account from '../../components/Account/Account';
+
 const Login = () => {
   return (
-    <main className="main bg-dark">
-      <div className="header">
-        <h1>Welcome back<br />Tony Jarvis!</h1>
-        <h2 className="sr-only">Accounts</h2>
-      </div>
-
-    </main>
+    <div>
+      <Header />
+      <main>
+        <Account/>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

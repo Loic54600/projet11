@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Form = () => {
   return (
@@ -17,7 +18,9 @@ const Form = () => {
         <div className="input-remember">
           <input type="checkbox" id="remember-me" /><label for="remember-me">Remember me</label>
         </div>
-        <a href="./user.html" className="sign-in-button">Sign In</a>
+        <NavLink to="/profil" >
+        <div className="sign-in-button">Sign In</div>
+        </NavLink>
       </form>
     </section>
   );
