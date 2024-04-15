@@ -6,13 +6,13 @@ import Account from '../../components/Account/Account';
 
 const Login = () => {
   return (
-    <div>
+    <main>
       <Header />
-      <main>
+      <main className='main bg-dark'>
         <Account/>
       </main>
       <Footer />
-    </div>
+    </main>
   );
 };
 

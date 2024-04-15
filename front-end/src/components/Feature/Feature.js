@@ -9,8 +9,8 @@ const Feature = () => {
       {FeatureDatas.map((FeatureData) => {
         return (
         <div className="feature-item">
-          <div>
-            <img src={FeatureData.image} alt={FeatureData.descriptionImage} key={FeatureData.id} className="feature-item-icon" />
+          <div key={FeatureData.id}>
+            <img src={FeatureData.image} alt={FeatureData.descriptionImage}  className="feature-item-icon" />
             <h3 className="feature-item-title">{FeatureData.title}</h3>
             <p>{FeatureData.description}</p>
           </div>

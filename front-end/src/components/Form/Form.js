@@ -19,7 +19,7 @@ const Form = () => {
           <input type="checkbox" id="remember-me" /><label for="remember-me">Remember me</label>
         </div>
         <NavLink to="/profil" >
-        <div className="sign-in-button">Sign In</div>
+          <div className="sign-in-button">Sign In</div>
         </NavLink>
       </form>
     </section>
