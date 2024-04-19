@@ -1,4 +1,4 @@
-import chat from '../assets/icon-money.webp'
+import chat from '../assets/icon-chat.webp'
 import money from '../assets/icon-money.webp'
 import security from '../assets/icon-security.webp'
 
