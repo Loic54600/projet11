@@ -4,7 +4,6 @@ function Featureprops(props) {
     const { src, title, desc } = props
     return (
         <section className="features">
-            <h2 className="sr-only">Features</h2>
             <div className="feature-item" key={id} >
                 <img src={src} alt="Chat Icon" className="feature-icon" />
                 <h3 className="feature-item-title">{title}</h3>
