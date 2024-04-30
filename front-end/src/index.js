@@ -8,7 +8,6 @@ import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Home from '../src/pages/Home/Home';
 import Login from '../src/pages/Login/Login';
 import Profil from '../src/pages/Profile/Profil';
-import Account from './components/Account/Account';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,10 +19,6 @@ root.render(
         <Route path="/login" element={<Login />} />
         <Route path="/profil" element={<Profil />} />
         <Route path='*' element={<Error />} />
-
-        <Route path='profil' element={isConnected ? <Account /> : <Navigate to="/login" />}/>
-
-
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
