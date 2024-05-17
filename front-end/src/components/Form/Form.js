@@ -76,11 +76,11 @@ const handleLogin = async (event) => {
       <form onSubmit={handleLogin}>
         <div className="input-wrapper">
           <label htmlFor="username">Username</label>
-          <input type="text" id="username" required ref={usernameInput} />
+          <input type="text" id="username" value="tony@stark.com" required ref={usernameInput} />
         </div>
         <div className="input-wrapper">
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" required ref={passwordInput} />
+          <input type="password" id="password" value="password123" required ref={passwordInput} />
         </div>
         <div className="input-remember">
           <input
@@ -92,8 +92,7 @@ const handleLogin = async (event) => {
         </div>
         <button className="sign-in-button"id="sign-in-button"
           ref={loginButton}
-          onClick={handleLogin}
-        >
+          onClick={handleLogin}>
           Sign In
         </button>
       </form>
