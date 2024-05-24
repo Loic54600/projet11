@@ -1,11 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-
+import { NavLink, useLocation } from "react-router-dom";
 import Logo from '../../../src/assets/argentBankLogo.webp'
 
-const Header = () => {
+import { useSelector, useDispatch } from "react-redux";
+
+function Header() {
+  const isLoggedIn = useSelector((state) => state.log.isLoggedIn);
+  const userData = useSelector((state) => state.user);
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  /*Variable qui supprime le token et deconnecte */
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
-    <div>
       <nav className="main-nav">
         <NavLink to="/home" >
           <div className="main-nav-logo">
@@ -14,17 +26,29 @@ const Header = () => {
           </div>
         </NavLink>
         <div>
-          <NavLink to="/login" >
-            <div className="main-nav-item">
-              <i className="fa fa-user-circle"></i>
-              Sign In
-            </div>
+        <div>
+        {isLoggedIn ? (
+          <div>
+            <NavLink to="/profile" className={"main-nav-item"}>
+              <i className="fa fa-user-circle"></i> {userData.userName}
+            </NavLink>
+           {/* === vérification des valeurs*/} 
+            {location.pathname === "/profile" && (
+              <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
+                <i className="fa fa-sign-out"></i> Sign Out
+              </NavLink>
+            )}
+          </div>
+        ) : (
+          <NavLink to="/login" className={"main-nav-item"}>
+            <i className="fa fa-user-circle"></i> Sign In
           </NavLink>
+        )}
+      </div>
         </div>
       </nav>
 
-    </div>
   );
-};
+}
 
-export default Header;
+  export default Header;

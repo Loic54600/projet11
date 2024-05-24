@@ -1,9 +1,9 @@
-const initialState = {
+const initial = {
     isLoggedIn:
       !!sessionStorage.getItem("token") || !!localStorage.getItem("token"),
   };
   
-  export default function logReducer(state = initialState, action) {
+  export default function logReducer(state = initial, action) {
     switch (action.type) {
       case "LOGIN_SUCCESS":
         return {

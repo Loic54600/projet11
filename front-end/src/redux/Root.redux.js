@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import userReducer from "../redux/user.redux";
-import logReducer from "../redux/log.redux";
+import profilRedux from "../redux/profil.redux";
+import loginRedux from "../redux/log.redux";
 
 const rootReducer = combineReducers({
-  user: userReducer,
-  log: logReducer,
+  user: profilRedux,
+  log: loginRedux,
 });
 
 export default rootReducer;

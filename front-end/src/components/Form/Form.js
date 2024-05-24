@@ -86,6 +86,22 @@ function FormSignin() {
   },
     [isLoggedIn, navigate]);
 
+
+  /*### Tony Stark
+
+- First Name: `Tony`
+- Last Name: `Stark`
+- Email: `tony@stark.com`
+- Password: `password123`
+
+### Steve Rogers
+
+- First Name: `Steve`,
+- Last Name: `Rogers`,
+- Email: `steve@rogers.com`,
+- Password: `password456` 
+*/
+
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">
@@ -94,11 +110,11 @@ function FormSignin() {
         <form onSubmit={handleLogin}>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" value="tony@stark.com" required ref={usernameInput} />
+            <input type="text" id="username" value="steve@rogers.com" required ref={usernameInput} />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" value="password123" required ref={passwordInput} />
+            <input type="password" id="password" value="password456" required ref={passwordInput} />
           </div>
           <div className="input-remember">
             <input
