@@ -3,7 +3,7 @@ const initial = {
       !!sessionStorage.getItem("token") || !!localStorage.getItem("token"),
   };
   
-  export default function logReducer(state = initial, action) {
+  export default function loginRedux(state = initial, action) {
     switch (action.type) {
       case "LOGIN_SUCCESS":
         return {
