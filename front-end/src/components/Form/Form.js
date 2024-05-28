@@ -11,13 +11,16 @@ function FormSignin() {
 
   /*le hook useRef se distingue comme un outil précieux pour gérer les valeurs et accéder aux éléments du modèle d’objet du document (DOM). */
   const loginButton = useRef();
-  const usernameInput = useRef();
+  const emailInput = useRef();
   const passwordInput = useRef();
 
   /* permet de mettre à jour l'état en fonction de deux conditions : si l'utilisateur est connecté ou non. 
   Cela explique également pourquo il'état initial est défini sur false, ce qui signifie que l'utilisateur n'est pas connecté. */
   const [rememberMe, setRememberMe] = useState(false);
 
+
+  /* isLoggedIn est une technique courante utilisée dans React. js pour faire varier l'interface utilisateur (UI) en fonction 
+  du statut de connexion de l'utilisateur. */
   const isLoggedIn = useSelector((state) => state.log.isLoggedIn);
 
 
@@ -25,7 +28,7 @@ function FormSignin() {
     /*Creation de la variable du formulaire
     - on récupére la valeur email et password */
     let Formlogin = {
-      "email": usernameInput.current.value,
+      "email": emailInput.current.value,
       "password": passwordInput.current.value,
     };
 
@@ -70,11 +73,11 @@ function FormSignin() {
   function Echec() {
     /*active la classe en echec */
     passwordInput.current.classList.add("Failed");
-    usernameInput.current.classList.add("Failed");
+    emailInput.current.classList.add("Failed");
     window.setTimeout(function () {
       /* Annule la classe */
       passwordInput.current.classList.remove("Failed");
-      usernameInput.current.classList.remove("Failed");
+      emailInput.current.classList.remove("Failed");
     }, 500);
   }
 
@@ -110,7 +113,7 @@ function FormSignin() {
         <form onSubmit={handleLogin}>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" value="steve@rogers.com" required ref={usernameInput} />
+            <input type="text" id="username" value="steve@rogers.com" required ref={emailInput} />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
