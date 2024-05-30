@@ -22,19 +22,19 @@ const Home = () => {
         </section>
       </div>
       <main className='main'>
-      <section className="features">
-        <h2 className="sr-only">Features</h2>
-        {FeatureDatas.map((FeatureData) => {
-          return (
-            <Featureprops
-              key={FeatureData.id}
-              src={FeatureData.src}
-              title={FeatureData.title}
-              description={FeatureData.description}
-            />
-          );
-        })}
-         </section>
+        <section className="features">
+          <h2 className="sr-only">Features</h2>
+          {FeatureDatas.map((FeatureData) => {
+            return (
+              <Featureprops
+                key={FeatureData.id}
+                src={FeatureData.src}
+                title={FeatureData.title}
+                description={FeatureData.description}
+              />
+            );
+          })}
+        </section>
       </main>
       <Footer />
     </main>

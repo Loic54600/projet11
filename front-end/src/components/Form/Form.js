@@ -113,11 +113,11 @@ function FormSignin() {
         <form onSubmit={handleLogin}>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" value="steve@rogers.com" required ref={emailInput} />
+            <input type="text" id="username" value="steve@rogers.com" required ref={emailInput} readOnly/>
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" value="password456" required ref={passwordInput} />
+            <input type="password" id="password" value="password456" required ref={passwordInput} readOnly />
           </div>
           <div className="input-remember">
             <input

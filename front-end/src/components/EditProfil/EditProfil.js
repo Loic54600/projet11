@@ -26,15 +26,17 @@ function EditProfil() {
     setIsEditing(true);
     setEditNameButton(profilData.userName);
   };
-/*variable qui récupére la valeur "nom" */
-  const handleButtonNameChange = (e) => {
+  /*variable qui récupére la valeur "nom" */
+  const handleButtonChange = (e) => {
     setEditNameButton(e.target.value);
   };
 
-  
+
   const handeleInputName = async () => {
     setIsEditing(false);
+    
     try {
+      /*permet l'envoi des données a l'adresse */
       const response = await fetch(
         "http://localhost:3001/api/v1/user/profile",
         {
@@ -53,10 +55,8 @@ function EditProfil() {
         dispatch(updateProfil({ userName: editNameButton }));
       }
       /*sinon message error */
-      else {
-        console.error("Erreur");
-      }
-    } catch (error) {
+    }
+    catch (error) {
       console.error("Erreur");
     }
     /*boutton qui change si changement de nom a été effectuer */
@@ -73,7 +73,7 @@ function EditProfil() {
   return (
     <div className="header">
       <h1>
-        Welcome back 
+        Welcome back
         <br />
         {profilData.userName}
       </h1>
@@ -81,9 +81,10 @@ function EditProfil() {
       {isEditing ? (
         <input className="input-button" type="text"
           ref={inputRef}
-          value={editNameButton}
-          onChange={handleButtonNameChange}
+          onChange={handleButtonChange}
           onBlur={handeleInputName}
+          placeholder="Changer votre nom"
+          
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
@@ -92,7 +93,7 @@ function EditProfil() {
           }}
         />
       ) : (
-        <button className="edit-button" onClick={handleEditButtonClick}>{editNameButton}</button>  
+        <button className="edit-button" onClick={handleEditButtonClick}>{editNameButton}</button>
       )}
     </div>
   );
