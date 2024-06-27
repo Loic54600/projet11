@@ -34,7 +34,13 @@ function Header() {
               <i className="fa fa-user-circle"></i> {userData.userName}
             </NavLink>
            {/* === vérification des valeurs et déconnection du compte*/} 
-            {location.pathname === "/profile" && (
+            {location.pathname === "/profile"  && (
+              <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
+                <i className="fa fa-sign-out"></i> Sign Out
+              </NavLink>
+            )}
+            {/* === vérification des valeurs et déconnection du compte*/} 
+            {location.pathname === "/"  && (
               <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
                 <i className="fa fa-sign-out"></i> Sign Out
               </NavLink>

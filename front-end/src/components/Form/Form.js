@@ -74,7 +74,11 @@ function FormSignin() {
     /*active la classe en echec */
     passwordInput.current.classList.add("Failed");
     emailInput.current.classList.add("Failed");
-    navigate("/");
+    window.setTimeout(function () {
+      /* Annule la classe */
+      passwordInput.current.classList.remove("Failed");
+      emailInput.current.classList.remove("Failed");
+    }, 500);
     ;
   }
 
@@ -87,7 +91,7 @@ function FormSignin() {
     [isLoggedIn, navigate]);
 
 
- 
+
 
   /*### Tony Stark
 
@@ -112,11 +116,11 @@ function FormSignin() {
         <form onSubmit={handleLogin}>
           <div className="input-wrapper">
             <label htmlFor="username">Username</label>
-            <input type="text" id="username"  required ref={emailInput} />
+            <input type="text" id="username" required ref={emailInput} />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" required ref={passwordInput}  />
+            <input type="password" id="password" required ref={passwordInput} />
           </div>
           <div className="input-remember">
             <input
