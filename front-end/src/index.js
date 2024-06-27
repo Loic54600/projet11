@@ -6,7 +6,7 @@ import "../src/styles/index.scss";
 
 import Home from '../src/pages/Home/Home';
 import Login from '../src/pages/Login/Login';
-import Profile from './pages/Profile/Profile';
+import User from './pages/Profile/User';
 
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
@@ -19,17 +19,17 @@ const store = configureStore({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<User />} />
         </Routes>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>
 );
 
 

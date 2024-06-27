@@ -18,44 +18,44 @@ function Header() {
   };
 
   return (
-      <nav className="main-nav">
-        <NavLink to="/" >
-          <div className="main-nav-logo">
-            <img className="main-nav-logo-image" src={Logo} alt="Argent Bank Logo" />
-            <h1 className="sr-only">Argent Bank</h1>
-          </div>
-        </NavLink>
-        <div>
-        <div>
-        {isLoggedIn ? (
-          <div>
-            {/*affiche le nom de la personne username et le logo */} 
-            <NavLink to="/profile" className={"main-nav-item"}>
-              <i className="fa fa-user-circle"></i> {userData.userName}
-            </NavLink>
-           {/* === vérification des valeurs et déconnection du compte*/} 
-            {location.pathname === "/profile"  && (
-              <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
-                <i className="fa fa-sign-out"></i> Sign Out
-              </NavLink>
-            )}
-            {/* === vérification des valeurs et déconnection du compte*/} 
-            {location.pathname === "/"  && (
-              <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
-                <i className="fa fa-sign-out"></i> Sign Out
-              </NavLink>
-            )}
-          </div>
-        ) : (
-          <NavLink to="/login" className={"main-nav-item"}>
-            <i className="fa fa-user-circle"></i> Sign In
-          </NavLink>
-        )}
-      </div>
+    <nav className="main-nav">
+      <NavLink to="/" >
+        <div className="main-nav-logo">
+          <img className="main-nav-logo-image" src={Logo} alt="Argent Bank Logo" />
+          <h1 className="sr-only">Argent Bank</h1>
         </div>
-      </nav>
+      </NavLink>
+      <div>
+        <div>
+          {isLoggedIn ? (
+            <div>
+              {/*affiche le nom de la personne username et le logo */}
+              <NavLink to="/profile" className={"main-nav-item"}>
+                <i className="fa fa-user-circle"></i> {userData.userName}
+              </NavLink>
+              {/* === vérification des valeurs et déconnection du compte*/}
+              {location.pathname === "/profile" && (
+                <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
+                  <i className="fa fa-sign-out"></i> Sign Out
+                </NavLink>
+              )}
+              {/* === vérification des valeurs et déconnection du compte*/}
+              {location.pathname === "/" && (
+                <NavLink to="/" onClick={handleLogout} className={"main-nav-item"}>
+                  <i className="fa fa-sign-out"></i> Sign Out
+                </NavLink>
+              )}
+            </div>
+          ) : (
+            <NavLink to="/login" className={"main-nav-item"}>
+              <i className="fa fa-user-circle"></i> Sign In
+            </NavLink>
+          )}
+        </div>
+      </div>
+    </nav>
 
   );
 }
 
-  export default Header;
+export default Header;

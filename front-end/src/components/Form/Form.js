@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useLocation } from "react-router-dom";
 
 useRef
 function FormSignin() {
@@ -51,7 +50,8 @@ function FormSignin() {
       if (response.error) {
         Echec();
         /*sinon la connexion s'effectue */
-      } else {
+      }
+      else {
         const token = response.body.token;
         sessionStorage.setItem("token", token);
         if (rememberMe) {
@@ -64,6 +64,7 @@ function FormSignin() {
       Echec();
     }
   };
+
   /* 1- Tout d’abord, le code dans try {...} est exécuté
      2- S’il n’y a pas eu d’erreur, alors catch(error) est ignoré : l’exécution arrive à la fin de try et continue en ignorant catch.
      3- Si une erreur survient, alors l’exécution de try est arrêtée et le contrôle se place au début de catch(error).
@@ -88,9 +89,7 @@ function FormSignin() {
       navigate("/profile");
     }
   },
-    [isLoggedIn, navigate]);
-
-
+    [isLoggedIn, navigate])
 
 
   /*### Tony Stark
