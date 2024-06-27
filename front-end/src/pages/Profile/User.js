@@ -18,10 +18,7 @@ function Login() {
   const navigate = useNavigate();
 
 
-  // FETCH GETUSER //
-
   async function getUser() {
-    // GET TOKEN //
     let token = "";
     const getToken = () => {
       token = window.sessionStorage.getItem("token");
